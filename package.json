@@ -16,6 +16,7 @@
 	],
 	"scripts": {
 		"build": "tsdown",
+		"prepublishOnly": "pnpm build",
 		"format": "prettier .",
 		"lint": "eslint . --max-warnings 0",
 		"prepare": "husky",
