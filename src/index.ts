@@ -1,2 +1,2 @@
-export * from "./legger-helper";
+export * from "./console-logger";
 export * from "./types";
