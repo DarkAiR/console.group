@@ -1,16 +1,13 @@
 {
 	"name": "console.group",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "Isolated console groups",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com//console.group.git"
+		"url": "git+https://github.com/DarkAiR/console.group.git"
 	},
 	"license": "MIT",
-	"author": {
-		"name": "Dmitriy Romanov",
-		"email": "d.romanov@goodt.me"
-	},
+	"author": "Dmitriy DarkAiR Romanov",
 	"type": "module",
 	"main": "lib/index.js",
 	"files": [
