@@ -1,5 +1,5 @@
 {
-	"name": "console.group",
+	"name": "@darkair/console.group",
 	"version": "1.0.0",
 	"description": "Isolated console groups",
 	"repository": {
