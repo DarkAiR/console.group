@@ -80,7 +80,7 @@ unpatchConsole();
 
 ## API Reference
 
-### `patchConsole(options?: PatchOptions): void`
+#### `patchConsole(options?: PatchOptions): void`
 
 Overrides the global console to add buffering and styling support.
 
@@ -102,27 +102,27 @@ patchConsole({
 });
 ```
 
-### `unpatchConsole(): void`
+#### `unpatchConsole(): void`
 
 Restores the original `console` object and clears internal buffers. Recommended to call in test `afterEach` hooks or during module teardown.
 
-### `console.group(label: string): string`
+#### `console.group(label: string): string`
 
 Creates a new message group.
 
 - **Returns:** `string` — unique group ID (used for `groupId` option)
 - **Behavior:** Group is created in buffer but not displayed until `groupEnd`
 
-### `console.groupCollapsed(label: string): string`
+#### `console.groupCollapsed(label: string): string`
 
 Same as `group`, but creates a collapsed group in the console upon flush.
 
-### `console.groupEnd(id?: string): void`
+#### `console.groupEnd(id?: string): void`
 
 - **With `id`**: Flushes all buffered messages for the group, then closes it in the console
 - **Without `id`**: Simply closes the current group in the original console (standard behavior)
 
-### `console.log(str: string, options?: LoggerOptions, ...args: unknown[]): void`   
+#### `console.log(str: string, options?: LoggerOptions, ...args: unknown[]): void`   
 
 **LoggerOptions:**
 
@@ -153,7 +153,7 @@ console.log('%cBold%cNormal', 'font-weight: bold', 'font-weight: normal');
 console.log('%cImportant', { prefix: '⚠️ ' }, 'color: red');
 ```
 
-### `console.warn() / console.error()`
+#### `console.warn() / console.error()`
 
 Work identically to `console.log()` but with different default colors (yellow for `warn`, red for `error`).
 
