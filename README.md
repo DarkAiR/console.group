@@ -164,6 +164,47 @@ console.log("%cImportant", { prefix: "⚠️ " }, "color: red");
 
 Work identically to `console.log()` but with different default colors (yellow for `warn`, red for `error`).
 
+## Type Definitions
+
+**Note:** These instructions assume your source files are located in the `/src` directory relative to your project root.
+
+### Option 1: Via Import
+
+Import the type definitions in any TypeScript file (e.g., `src/main.ts`, `src/global.d.ts`, or a dedicated types file):
+
+```ts
+import "@darkair/console.group/lib/global";
+```
+
+This is the modern approach and avoids ESLint warnings about triple-slash references.
+
+### Option 2: Via Triple-Slash Reference
+
+**In a Global Declaration File**
+
+Create or open `src/global.d.ts` in your project and add the following line:
+
+```ts
+/// <reference path="../node_modules/@darkair/console.group/lib/global.d.ts" />
+```
+
+**In a Main File**
+
+Add the following line at the very top of any TypeScript file (e.g., `src/main.ts`):
+
+```ts
+/// <reference path="../node_modules/@darkair/console.group/lib/global.d.ts" />
+```
+
+**Notes**
+
+- Make sure the `src/` directory is listed in the `include` section of your `tsconfig.json`.
+- You might need to disable the ESLint rule `@typescript-eslint/triple-slash-reference` for these lines if using ESLint.
+
+### Restart TypeScript
+
+After adding the reference, restart the TypeScript Language Service in your IDE (VS Code, WebStorm, etc.).
+
 ## ⚠️ Important Notes
 
 ### Argument Order

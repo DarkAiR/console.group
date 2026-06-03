@@ -12,10 +12,20 @@
 	"main": "lib/index.js",
 	"types": "lib/index.d.ts",
 	"files": [
-		"lib/"
+		"lib/",
+		"src/global.d.ts"
 	],
+	"exports": {
+		".": {
+			"types": "./lib/index.d.ts",
+			"import": "./lib/index.js"
+		},
+		"./global": {
+			"types": "./lib/global.d.ts"
+		}
+	},
 	"scripts": {
-		"build": "tsdown",
+		"build": "tsdown && node src/scripts/copy-types.mjs",
 		"prepublishOnly": "pnpm build",
 		"format": "prettier .",
 		"lint": "eslint . --max-warnings 0",
