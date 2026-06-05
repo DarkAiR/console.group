@@ -9,15 +9,15 @@
 	"license": "MIT",
 	"author": "Dmitriy DarkAiR Romanov",
 	"type": "module",
-	"main": "lib/index.js",
+	"module": "lib/index.js",
 	"types": "lib/index.d.ts",
 	"files": [
 		"lib/"
 	],
 	"exports": {
 		".": {
-			"types": "./lib/index.d.ts",
-			"import": "./lib/index.js"
+			"import": "./lib/index.js",
+			"types": "./lib/index.d.ts"
 		},
 		"./global": {
 			"types": "./lib/global.d.ts"

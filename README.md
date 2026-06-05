@@ -96,8 +96,8 @@ Overrides the global console to add buffering and styling support.
 | Option      | Type   | Description                              | Default         |
 | :---------- | :----- | :--------------------------------------- | :-------------- |
 | prefixStyle | string | CSS style for prefixes                   | 'color: grey'   |
-| logStyle    | string | Default style for console.log messages   | 'color: grey'   |
-| warnStyle   | string | Default style for console.warn messages  | 'color: yellow' |
+| logStyle    | string | Default style for console.log messages   | 'color: black'  |
+| warnStyle   | string | Default style for console.warn messages  | 'color: orange' |
 | errorStyle  | string | Default style for console.error messages | 'color: red'    |
 
 ### Example:
@@ -109,9 +109,13 @@ patchConsole({
 });
 ```
 
+---
+
 #### unpatchConsole(): void
 
 Restores the original `console` object and clears internal buffers. Recommended to call in test `afterEach` hooks or during module teardown.
+
+---
 
 #### console.group(label: string): string
 
@@ -120,14 +124,20 @@ Creates a new message group.
 - **Returns:** `string` — unique group ID (used for `groupId` option)
 - **Behavior:** Group is created in buffer but not displayed until `groupEnd`
 
+---
+
 #### console.groupCollapsed(label: string): string
 
 Same as `group`, but creates a collapsed group in the console upon flush.
 
-#### `console.groupEnd(id?: string): void`
+---
+
+#### console.groupEnd(id?: string): void
 
 - **With `id`**: Flushes all buffered messages for the group, then closes it in the console
 - **Without `id`**: Simply closes the current group in the original console (standard behavior)
+
+---
 
 #### console.log(str: string, options?: LoggerOptions, ...args: unknown[]): void
 
@@ -160,9 +170,11 @@ console.log("%cBold%cNormal", "font-weight: bold", "font-weight: normal");
 console.log("%cImportant", { prefix: "⚠️ " }, "color: red");
 ```
 
+---
+
 #### console.warn() / console.error()
 
-Work identically to `console.log()` but with different default colors (yellow for `warn`, red for `error`).
+Work identically to `console.log()` but with different default colors (orange for `warn`, red for `error`).
 
 ## Type Definitions
 
